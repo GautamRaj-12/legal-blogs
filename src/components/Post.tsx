@@ -11,7 +11,7 @@ const Post: React.FC<PostProps> = (props) => {
 
   return (
     <div className='mb-2'>
-      <div className='h-[200px] max-w-[350px]'>
+      <div className='h-[200px] md:max-w-[350px] max-w-[100%] '>
         <img
           src={imgsrc}
           alt=''
