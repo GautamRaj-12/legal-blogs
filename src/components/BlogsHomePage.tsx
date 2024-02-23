@@ -3,7 +3,7 @@ import Post from './Post';
 const BlogsHomePage = () => {
   return (
     <>
-      <div className='grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-3 mx-auto w-[90%] mt-4'>
+      <div className='grid md:grid-cols-3 grid-cols-2 gap-3 mx-auto w-[90%] mt-4'>
         <Post
           imgsrc='https://images.unsplash.com/photo-1603796846097-bee99e4a601f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
           category='Law'

@@ -6,6 +6,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-bg-color: #212529;
+  --primary-text-color: #fffcf2;
+  --button-bg-color: #343a40;
+  --light-color: #495057;
+  --another-light-color: #adb5bd;
+}
 body {
-  overflow-x: hidden;
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
 }

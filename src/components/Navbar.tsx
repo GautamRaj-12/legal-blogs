@@ -18,13 +18,13 @@ const Navbar: React.FC = () => {
   };
   return (
     <>
-      <header className='px-4 md:py-2 py-4 bg-[#f8efea]'>
+      <header className='px-4 md:py-2 py-4'>
         <nav className='grid grid-cols-12 gap-2 font-bold'>
           <h1 className='col-span-3 '>
             <img src={logo} alt='legal blogs by rohan logo' />
           </h1>
           <ul
-            className={`col-span-9 text-2xl md:flex ${navLink} md:flex-row flex-col justify-evenly items-center md:relative absolute md:top-auto top-0 md:right-auto right-0 bg-[#f8efea] md:h-auto h-screen md:w-auto w-1/2 animate-slide-from-right`}
+            className={`col-span-9 text-2xl md:flex ${navLink} md:flex-row flex-col justify-evenly items-center md:relative absolute md:top-auto top-0 md:right-auto right-0 md:bg-transparent bg-[--primary-bg-color] md:h-auto h-screen md:w-auto w-1/2 animate-slide-from-right`}
           >
             <li>Home</li>
             <li>Posts</li>
