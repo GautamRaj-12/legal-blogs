@@ -2,12 +2,17 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        heroImage:
+          "linear-gradient(to bottom right,rgba(239,99,82,0.5),rgba(38, 37, 34,0.6),rgba(159,220,38,0.3)),url('./src/assets/images/hero.webp')",
+      },
+    },
     colors: {
       light: "#ffffff",
-      dark: "#262522",
-      primary: "#EE6352",
-      secondary: "#9FDC26",
+      dark: "#262522", //rgb(38, 37, 34)
+      primary: "#EE6352", // rgb(239,99,82)
+      secondary: "#9FDC26", //rgb(159,220,38)
       grey: "#FFFBF2",
     },
     fontSize: {
