@@ -22,10 +22,17 @@ export default {
       paraOne: ["1.3125rem", { lineHeight: "140%", fontWeight: "400" }],
       paraTwo: ["1rem", { lineHeight: "140%", fontWeight: "300" }],
       subtitle: ["1.125rem", { lineHeight: "100%", fontWeight: "600" }],
-      buttonText: ["0.875rem", { lineHeight: "100%", fontWeight: "500" }],
+      buttonText: [
+        "0.875rem",
+        { lineHeight: "100%", fontWeight: "600", letterSpacing: "0.1rem" },
+      ],
       smallText: ["0.75rem", { lineHeight: "120%", fontWeight: "500" }],
       linkText: ["1rem", { lineHeight: "120%", fontWeight: "400" }],
       boldText: ["1rem", { lineHeight: "120%", fontWeight: "500" }],
+    },
+    fontFamily: {
+      roboto: "Roboto, sans-serif",
+      montserrat: "Montserrat, sans-serif",
     },
   },
   plugins: [],

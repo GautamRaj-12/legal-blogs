@@ -5,12 +5,12 @@ const Hero = () => {
         <h1 className="text-light text-headerOne text-center">
           Beyond the Courtroom
         </h1>
-        <h2 className="max-w-[26rem] text-paraOne text-light text-center mt-3">
+        <h2 className="max-w-[26rem] text-paraOne text-light text-center mt-3 font-roboto">
           Explore the synergy of law, cricket, and administration, uncover
           authoritative commentary, and let our passion for insight enhance your
           understanding.
         </h2>
-        <button className="mt-10 text-dark text-buttonText bg-secondary py-3 px-6 rounded-full uppercase">
+        <button className="mt-10 text-dark text-buttonText bg-secondary py-3 px-6 rounded-full uppercase font-roboto">
           Explore Articles
         </button>
       </div>
