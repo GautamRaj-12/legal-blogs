@@ -13,11 +13,11 @@ export default {
       dark: "#262522", //rgb(38, 37, 34)
       primary: "#EE6352", // rgb(239,99,82)
       secondary: "#9FDC26", //rgb(159,220,38)
-      grey: "#FFFBF2",
+      grey: "#4b4949",
     },
     fontSize: {
       headerOne: ["5rem", { lineHeight: "100%", fontWeight: "800" }],
-      headerTwo: ["2.5rem", { lineHeight: "100%", fontWeight: "700" }],
+      headerTwo: ["2.5rem", { lineHeight: "120%", fontWeight: "700" }],
       headerThree: ["1.5rem", { lineHeight: "120%", fontWeight: "700" }],
       paraOne: ["1.3125rem", { lineHeight: "140%", fontWeight: "400" }],
       paraTwo: ["1rem", { lineHeight: "140%", fontWeight: "300" }],
