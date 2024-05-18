@@ -4,7 +4,7 @@ const Posts = () => {
   return (
     <>
       <div className="flex flex-col items-center mt-4">
-        <h2 className="text-headerTwo text-dark mt-4 text-center border-b-primary border-b-4 pb-1 italic">
+        <h2 className="text-headerTwo text-primary mt-4 text-center uppercase tracking-wider">
           Posts
         </h2>
       </div>
