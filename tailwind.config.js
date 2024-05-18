@@ -21,6 +21,7 @@ export default {
       headerThree: ["1.5rem", { lineHeight: "120%", fontWeight: "700" }],
       paraOne: ["1.3125rem", { lineHeight: "140%", fontWeight: "400" }],
       paraTwo: ["1rem", { lineHeight: "140%", fontWeight: "300" }],
+      postText: ["1.2rem", { lineHeight: "150%" }],
       subtitle: ["1.125rem", { lineHeight: "100%", fontWeight: "600" }],
       tagline: ["1.125rem", { lineHeight: "100%", fontWeight: "500" }],
       buttonText: [
