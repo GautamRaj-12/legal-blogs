@@ -7,6 +7,7 @@ interface postProps {
   title: string;
   desc: string;
   coverImage: string;
+  postId: string;
   createdAt: Date;
 }
 const Posts = () => {
@@ -36,6 +37,7 @@ const Posts = () => {
         {posts.map((post) => (
           <Card
             key={post?._id}
+            postId={post?._id}
             postImg={post?.coverImage}
             postTitle={
               post?.title.length > 30

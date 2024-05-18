@@ -1,10 +1,19 @@
+import { Link } from "react-router-dom";
+
 interface cardProps {
   postImg: string;
   postTitle: string;
   postDesc: string;
   postDate: string;
+  postId: string;
 }
-const Card = ({ postImg, postTitle, postDesc, postDate }: cardProps) => {
+const Card = ({
+  postImg,
+  postTitle,
+  postDesc,
+  postDate,
+  postId,
+}: cardProps) => {
   return (
     <>
       <div className="sm:max-w-[26rem] max-w-full rounded-md border border-dark/25">
@@ -21,9 +30,12 @@ const Card = ({ postImg, postTitle, postDesc, postDate }: cardProps) => {
           ></h2>
           <div className="pt-14 flex justify-between items-center">
             <p className="text-smallText font-roboto uppercase">{postDate}</p>
-            <button className="text-buttonText uppercase font-roboto py-3 px-6 rounded-full border border-dark">
+            <Link
+              className="text-buttonText uppercase font-roboto py-3 px-6 rounded-full border border-dark"
+              to={`posts/post/${postId}`}
+            >
               Read More
-            </button>
+            </Link>
           </div>
         </div>
       </div>
