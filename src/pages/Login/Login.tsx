@@ -1,10 +1,20 @@
 import { Link } from "react-router-dom";
-import Input from "../../components/Input/Input";
+import { ChangeEvent, useState } from "react";
 
 const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleUsernameChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setUsername(e.target.value);
+  };
+
+  const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
+  };
   return (
     <>
-      <section className="flex flex-col items-center pt-10 h-screen" style={{}}>
+      <section className="flex flex-col items-center pt-10 h-screen">
         <form action="" className="sm:w-[27rem] w-full px-4">
           <h1 className="text-headerTwo">Log in</h1>
           <p className="mt-6">
@@ -17,17 +27,21 @@ const Login = () => {
             </Link>
           </p>
           <div className="mt-12">
-            <Input
-              labelText={"Username or Email"}
-              inputType={"text"}
-              inputPlaceholder={"Enter username or email"}
+            <label htmlFor="">Username or Email</label>
+            <input
+              type="text"
+              placeholder={"Enter username or email"}
+              value={username}
+              onChange={handleUsernameChange}
             />
           </div>
           <div className="mt-8">
-            <Input
-              labelText={"Password"}
-              inputType={"password"}
-              inputPlaceholder={"Enter your password"}
+            <label htmlFor="">Password"</label>
+            <input
+              type="password"
+              placeholder={"Enter password"}
+              value={password}
+              onChange={handlePasswordChange}
             />
           </div>
           <button className="w-full mt-8 bg-secondary rounded-full py-3 px-2 text-buttonText font-bold">

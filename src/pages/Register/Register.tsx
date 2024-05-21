@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import Input from "../../components/Input/Input";
-
 const Register = () => {
   return (
     <>
@@ -17,39 +15,24 @@ const Register = () => {
             </Link>
           </p>
           <div className="mt-12">
-            <Input
-              labelText={"Email"}
-              inputType={"email"}
-              inputPlaceholder={"Enter your email address"}
-            />
+            <label htmlFor="">Email</label>
+            <input type="email" placeholder={"Enter your email address"} />
           </div>
           <div className="mt-8">
-            <Input
-              labelText={"Username"}
-              inputType={"text"}
-              inputPlaceholder={"Enter your user name"}
-            />
+            <label htmlFor="">Username</label>
+            <input type="text" placeholder={"Enter your user name"} />
           </div>
           <div className="mt-8">
-            <Input
-              labelText={"Full Name"}
-              inputType={"text"}
-              inputPlaceholder={"Enter your Full Name"}
-            />
+            <label htmlFor="">Full Name</label>
+            <input type="text" placeholder={"Enter your Full Name"} />
           </div>
           <div className="mt-8">
-            <Input
-              labelText={"Password"}
-              inputType={"password"}
-              inputPlaceholder={"Enter your password"}
-            />
+            <label htmlFor="">Password</label>
+            <input type="password" placeholder={"Enter your password"} />
           </div>
           <div className="mt-8">
-            <Input
-              labelText={"Confirm Password"}
-              inputType={"password"}
-              inputPlaceholder={"Enter your password again"}
-            />
+            <label htmlFor="">Confirm Password</label>
+            <input type="password" placeholder={"Enter your password again"} />
           </div>
           <button className="w-full mt-8 bg-secondary rounded-full py-3 px-2 text-buttonText font-bold">
             Sign Up
