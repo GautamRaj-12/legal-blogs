@@ -31,7 +31,7 @@ const Navbar = () => {
               alt="A clickable search icon for searching blog posts"
               className="bg-dark/10 rounded-full p-2"
             />
-            <NavLink to="/register">
+            <NavLink to="/login">
               <li className="py-3 px-6 bg-dark text-light rounded-[24px]">
                 Login
               </li>
