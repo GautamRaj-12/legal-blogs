@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, SyntheticEvent, useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,10 +15,32 @@ const Login = () => {
   const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
   };
+
+  const handleLogin = async (e: SyntheticEvent) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/users/login`,
+        { email: username, username, password },
+        { withCredentials: true }
+      );
+      const loggedInUser = response?.data?.data?.user;
+      console.log(loggedInUser);
+      setUsername("");
+      setPassword("");
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       <section className="flex flex-col items-center pt-10 h-screen">
-        <form action="" className="sm:w-[27rem] w-full px-4">
+        <form
+          action=""
+          onSubmit={handleLogin}
+          className="sm:w-[27rem] w-full px-4"
+        >
           <h1 className="text-headerTwo">Log in</h1>
           <p className="mt-6">
             If you don't have an account, you can{" "}
@@ -36,7 +61,7 @@ const Login = () => {
             />
           </div>
           <div className="mt-8">
-            <label htmlFor="">Password"</label>
+            <label htmlFor="">Password</label>
             <input
               type="password"
               placeholder={"Enter password"}
@@ -44,7 +69,10 @@ const Login = () => {
               onChange={handlePasswordChange}
             />
           </div>
-          <button className="w-full mt-8 bg-secondary rounded-full py-3 px-2 text-buttonText font-bold">
+          <button
+            type="submit"
+            className="w-full mt-8 bg-secondary rounded-full py-3 px-2 text-buttonText font-bold"
+          >
             Login
           </button>
         </form>
