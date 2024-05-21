@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 import { ChangeEvent, SyntheticEvent, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../store/userSlice";
 
 const Login = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -25,6 +28,7 @@ const Login = () => {
         { withCredentials: true }
       );
       const loggedInUser = response?.data?.data?.user;
+      dispatch(setUser(loggedInUser));
       console.log(loggedInUser);
       setUsername("");
       setPassword("");

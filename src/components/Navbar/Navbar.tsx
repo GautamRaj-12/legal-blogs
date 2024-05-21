@@ -1,7 +1,27 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/images/legal-blogs-logo.svg";
 import searchIcon from "../../assets/images/search.svg";
+import { useSelector, useDispatch } from "react-redux";
+import { clearUser } from "../../store/userSlice";
+import axios from "axios";
+
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const user = useSelector((store: any) => store.user.user);
+  const handleLogout = async () => {
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/users/logout`,
+        {},
+        { withCredentials: true }
+      );
+      console.log(response);
+      dispatch(clearUser());
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       <header className="pt-4 font-roboto">
@@ -31,11 +51,20 @@ const Navbar = () => {
               alt="A clickable search icon for searching blog posts"
               className="bg-dark/10 rounded-full p-2"
             />
-            <NavLink to="/login">
-              <li className="py-3 px-6 bg-dark text-light rounded-[24px]">
-                Login
-              </li>
-            </NavLink>
+            {user === null ? (
+              <NavLink to="/login">
+                <li className="py-3 px-6 bg-dark text-light rounded-[24px]">
+                  Login
+                </li>
+              </NavLink>
+            ) : (
+              <NavLink to="" onClick={handleLogout}>
+                <li className="py-3 px-6 bg-dark text-light rounded-[24px]">
+                  Logout
+                </li>
+              </NavLink>
+            )}
+
             <NavLink to="">
               <li className="py-3 px-6 bg-dark text-light rounded-[24px]">
                 Write
