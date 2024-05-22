@@ -65,7 +65,7 @@ const Navbar = () => {
               </NavLink>
             )}
 
-            <NavLink to="">
+            <NavLink to="/write">
               <li className="py-3 px-6 bg-dark text-light rounded-[24px]">
                 Write
               </li>

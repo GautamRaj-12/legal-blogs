@@ -1,13 +1,13 @@
-import Hero from "./components/Hero/Hero";
-import Navbar from "./components/Navbar/Navbar";
-import Posts from "./components/Posts/Posts";
+import { Provider } from "react-redux";
+import store from "./store/store";
+import AppRoutes from "./routes/AppRoutes";
 
 const App = () => {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <Posts />
+      <Provider store={store}>
+        <AppRoutes />
+      </Provider>
     </>
   );
 };
