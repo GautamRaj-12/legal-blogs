@@ -23,11 +23,11 @@ const SingleBlog = () => {
           `${import.meta.env.VITE_API_URL}/posts/post/${id}`
         );
         console.log(res);
-        setTitle(res?.data?.data?.title);
-        setDesc(res?.data?.data?.desc);
-        setPostImage(res?.data?.data?.coverImage);
-        setOwner(res?.data?.data?.username);
-        setPostDate(res?.data?.data?.createdAt);
+        setTitle(res?.data?.data?.post?.title);
+        setDesc(res?.data?.data?.post?.desc);
+        setPostImage(res?.data?.data?.post?.coverImage);
+        setOwner(res?.data?.data?.convertedUsername);
+        setPostDate(res?.data?.data?.post?.createdAt);
       } catch (error) {
         console.log("Error", error);
       }
@@ -58,7 +58,7 @@ const SingleBlog = () => {
   return (
     <>
       <Navbar />
-      <section className="mt-4 mx-auto w-[60%]">
+      <section className="mt-4 mx-auto md:w-[60%] w-[90%]">
         <div className="w-full h-[30rem]">
           <img src={postImage} className="w-full h-full object-cover" />
         </div>

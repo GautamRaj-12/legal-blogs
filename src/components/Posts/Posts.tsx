@@ -10,6 +10,13 @@ interface postProps {
   postId: string;
   createdAt: Date;
 }
+
+const stripHTML = (html: string) => {
+  const tmp = document.createElement("DIV");
+  tmp.innerHTML = html;
+  return tmp.textContent || tmp.innerText || "";
+};
+
 const Posts = () => {
   const [posts, setPosts] = useState<postProps[]>([]);
   useEffect(() => {
@@ -45,9 +52,9 @@ const Posts = () => {
                 : post?.title
             }
             postDesc={
-              post?.desc.length > 60
-                ? post.desc.slice(0, 60) + "..."
-                : post?.desc
+              stripHTML(post?.desc).length > 60
+                ? stripHTML(post.desc).slice(0, 60) + "..."
+                : stripHTML(post?.desc)
             }
             postDate={new Date(post?.createdAt).toLocaleString("en-In", {
               year: "numeric",

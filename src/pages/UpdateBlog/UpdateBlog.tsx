@@ -45,7 +45,7 @@ const UpdateBlog: React.FC<WriteProps> = () => {
         const res = await axios.get(
           `${import.meta.env.VITE_API_URL}/posts/post/${id}`
         );
-        console.log(res);
+        // console.log(res);
         setTitle(res?.data?.data?.title);
         setDesc(res?.data?.data?.desc);
       } catch (error) {
@@ -53,7 +53,7 @@ const UpdateBlog: React.FC<WriteProps> = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [id]);
   const handleTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
   };
@@ -97,12 +97,14 @@ const UpdateBlog: React.FC<WriteProps> = () => {
     // const categoryStrings = selectedCategories.map((category) => category);
     // console.log(categoryStrings);
     // formData.append("categories", JSON.stringify(categoryStrings));
-    for (const category of selectedCategories) {
-      formData.append("categories[]", category); // Add each category with a key ending in "[]"
+    if (categories) {
+      for (const category of selectedCategories) {
+        formData.append("categories[]", category); // Add each category with a key ending in "[]"
+      }
     }
 
     try {
-      const res = await axios.post(
+      const res = await axios.patch(
         `${import.meta.env.VITE_API_URL}/posts/update/${id}`,
         formData,
         {
